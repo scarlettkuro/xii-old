@@ -1,0 +1,4 @@
+<form action="showMessage.jsp" method="post" >
+<textarea  rows="3"></textarea>
+<input type="submit" value="send">
+</form>

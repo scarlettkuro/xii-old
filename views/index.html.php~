@@ -1,0 +1,11 @@
+
+ <?php
+
+      foreach($posts as $post)
+      {
+        echo '<a href="/' . $post->id . '">' . $post->text . $post->id . '</a><hr>';
+      }
+
+    ?>
+<hr>
+<a href="/new">+ Add</a>
