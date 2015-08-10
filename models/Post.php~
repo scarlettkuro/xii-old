@@ -1,5 +1,0 @@
-<?php
-class Poster extends ActiveRecord\Model
-{
-}
-?>
