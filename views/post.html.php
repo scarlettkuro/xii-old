@@ -1,3 +1,13 @@
 <?=$post->text?> <hr>
-<a href="/<?=$post->id?>/edit">Edit <?=$post->id?></a>
-<a href="/<?=$post->id?>/delete">Delete <?=$post->id?></a>
+
+<?php if (isset($_SESSION['user'])): ?>
+	<a href="/<?=$post->id?>/edit">Edit <?=$post->id?></a>
+	<a href="/<?=$post->id?>/delete">Delete <?=$post->id?></a>
+	<br>
+	<?=$_SESSION['user']['name']?>
+	<a href="/logout">Log out</a>
+
+<? else: ?>
+	<a href="<?=getLoginUrl() ?>">Аутентификация через Google</a>
+
+<? endif; ?>
