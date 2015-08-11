@@ -1,6 +1,7 @@
 <?php
 require_once 'lib/limonade.php';
 require_once 'lib/php-activerecord/ActiveRecord.php';
+require_once "lib/JBBCode/Parser.php";
 require_once 'ServiceLocator.php'; //My own locator
 
 ActiveRecord\Config::initialize(function($cfg) {

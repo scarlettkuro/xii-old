@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>xii |</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
@@ -25,7 +26,7 @@
 <?php foreach(array_slice($posts,1) as $post): ?>
 <div class="panel panel-default" >
   <div class="panel-body">
-    <?=$post->text?>
+    <?=getPlainFromBB($post->text)?>
   </div>
   <div class="panel-footer">
 	<a href="/<?=$post->id?>">There could be your date. Now there's id : <?=$post->id?></a>

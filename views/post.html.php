@@ -1,5 +1,8 @@
+<?
+?>
 <html>
 <head>
+<title>xii | Riid</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
@@ -9,7 +12,7 @@
 <a href="/" class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:26px; color:black;margin-right:10px;"></a>
 There could be your date, but no, there's post's id : <?=$post->id?>
 <hr>
-<?=$post->text?> <hr>
+<?=getHTMLfromBB($post->text)?> <hr>
 
 <?php if (isset($_SESSION['user'])): ?>
 	<a href="/<?=$post->id?>/edit" class="btn btn-primary">Edit</a>

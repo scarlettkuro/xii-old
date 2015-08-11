@@ -47,4 +47,16 @@
 
 		return json_decode($result, true);
 	}
+
+	function getHTMLfromBB($bb) {
+		$parser = new JBBCode\Parser();
+		$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
+		return $parser->parse($bb)->getAsHtml();
+	}
+
+	function getPlainFromBB($bb) {
+		$parser = new JBBCode\Parser();
+		$parser->addCodeDefinitionSet(new JBBCode\DefaultCodeDefinitionSet());
+		return $parser->parse($bb)->getAsText();
+	}
 ?>
