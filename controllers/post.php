@@ -35,7 +35,7 @@ class PostController {
 		//only authorized
 		if (isset($_SESSION['user'])) {
 			if (params('id')=='new')
-				 $post = Post::create(array('text' =>  $_POST['text']));
+				 $post = Post::create(array('text' =>  $_POST['text'], 'created' => date('Y-m-d H:i:s',time())));
 			else {	
 				$post = Post::find_by_id(params('id'));
 				$post->text = $_POST['text'];

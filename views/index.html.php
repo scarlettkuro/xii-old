@@ -29,7 +29,7 @@
     <?=getPlainFromBB($post->text)?>
   </div>
   <div class="panel-footer">
-	<a href="/<?=$post->id?>">There could be your date. Now there's id : <?=$post->id?></a>
+	<a href="/<?=$post->id?>"><?=$post->created->format('d M Y H:i:s')?></a>
   </div>
 </div>
        
