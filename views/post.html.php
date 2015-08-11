@@ -1,3 +1,6 @@
+
+<a href="/"><-main</a>
+<hr>
 <?=$post->text?> <hr>
 
 <?php if (isset($_SESSION['user'])): ?>
@@ -5,6 +8,7 @@
 	<a href="/<?=$post->id?>/delete">Delete <?=$post->id?></a>
 	<br>
 	<?=$_SESSION['user']['name']?>
+	<?=dechex ($_SESSION['user']['id'])?>
 	<a href="/logout">Log out</a>
 
 <? else: ?>
