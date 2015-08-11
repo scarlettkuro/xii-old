@@ -8,7 +8,7 @@
 
 <?php if (isset($_SESSION['user'])): ?>
 
-	<a href="/<?=$post->id?>" class="glyphicon glyphicon-remove" aria-hidden="true" style="font-size:26px; color:black;margin-right:10px;"></a>
+	<a href="<?=$back_url?>" class="glyphicon glyphicon-remove" aria-hidden="true" style="font-size:26px; color:black;margin-right:10px;"></a>
 	<hr>
 
 	<form action="/<?= empty($post) ? 'new' : $post->id?>/save" method="post" >

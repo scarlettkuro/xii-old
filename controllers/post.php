@@ -14,15 +14,17 @@ class PostController {
 
 	 static function newpost() {
 		//only authorized (any)
-		if (isset($_SESSION['user']))
+		if (isset($_SESSION['user'])) {
+			set('back_url', '/');
 			return html('edit.html.php');
-		else 
+		} else 
 			return html('login.html.php');
 	}
 
 	 static function edit() {
 		//only authorized
 		if (isset($_SESSION['user'])) {
+			set('back_url', '/' . params('id'));
 			set('post', Post::find_by_id(params('id')));
 			return html('edit.html.php'); 
 		} else 
