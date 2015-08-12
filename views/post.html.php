@@ -1,5 +1,3 @@
-<?
-?>
 <html>
 <head>
 <title>xii | Riid</title>
@@ -14,7 +12,7 @@ There could be your date, but no, there's post's id : <?=$post->id?>
 <hr>
 <?=getHTMLfromBB($post->text)?> <hr>
 
-<?php if (isset($_SESSION['user'])): ?>
+<?php if ($allowEdit): ?>
 	<a href="/<?=$post->id?>/edit" class="btn btn-primary">Edit</a>
 	<a href="/<?=$post->id?>/delete" class="btn btn-danger">Delete</a>
 <? else: ?>

@@ -11,10 +11,17 @@ ActiveRecord\Config::initialize(function($cfg) {
 });
 
 
-
 dispatch('/', 'PostController::index');
+
+//visitors
+dispatch('/blog/:user_id', 'PostController::blog');
+//dispatch('/blog/:user_id/:id', 'PostController::post');
+
+//AUTH
 dispatch('/google-auth', 'GoogleAuthController::auth');
 dispatch('/logout', 'GoogleAuthController::logout');
+
+//POST CRUD
 dispatch('/new', 'PostController::newpost');
 dispatch('/:id', 'PostController::post');
 dispatch('/:id/edit', 'PostController::edit');

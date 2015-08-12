@@ -1,16 +1,16 @@
 <html>
 <head>
-<title>xii |</title>
+<title>xii | <?=$_SESSION['user']['name'] ?></title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container">
 <div class="jumbotron">
-  <h3><?=$posts[0]->text?></h3>
-  <p><a href="/<?=$posts[0]->id?>">There could be your date. Now there's id : <?=$posts[0]->id?></p>
+  <h3><?= count($posts)>0 ? $posts[0]->text : "There are no such blog for now. Want start blogging? Sign in"?></h3>
+  <p><a href="/<?=count($posts)>0 ? $posts[0]->id : ''?>"><?=count($posts)>0 ? $posts[0]->created->format('d M Y H:i:s'): ""?></a></p>
 
-  <?php if (isset($_SESSION['user'])): ?><a href="/logout" >Log out</a><? endif; ?>
+  <?php if (isset($_SESSION['user'])): ?><?=$_SESSION['user']['name'] ?> <a href="/logout" >Log out</a><? endif; ?>
 </div>
 
 <?php if (isset($_SESSION['user'])): ?>
